@@ -1,9 +1,9 @@
-API_KEY = '54fc74fbbb09f2576d8de10e5b606388'
-
 import pandas as pd
 from dagster import execute_job, build_op_context, DagsterInstance, reconstructable
 import os
 import sys
+
+API_KEY = os.getenv("OPENWEATHER_API_KEY")
 
 # Ensure the module is discoverable in the subprocess
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
